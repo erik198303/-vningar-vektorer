@@ -8,8 +8,9 @@ namespace Steg1
         {
 
        
-            /* 
-            STEG 1 med try&catch
+            
+           // STEG 1 med try&catch
+
            try{
             System.Console.Write("Mata in tal 1: ");
             int num1 = Convert.ToInt32(Console.ReadLine());   
@@ -48,7 +49,7 @@ namespace Steg1
            {
                System.Console.WriteLine("Du måste mata in ett heltal!!");
            } 
-           */ 
+         
 
             
             
