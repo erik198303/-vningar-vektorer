@@ -14,6 +14,8 @@ namespace Väderstationen
          */
         static void Main(string[] args)
         {
+            //skapa en lista med 5 element. Alla har värde 0 från början.
+            //Ligger utanför loop eftersom annars kommer dom få värde 0 efter varje loop runda.
             List<int> temperatur = new List<int>();
             temperatur.Add(0);
             temperatur.Add(0);
@@ -21,7 +23,7 @@ namespace Väderstationen
             temperatur.Add(0);
             temperatur.Add(0);
             
-            
+            //Håller reda på total temperatur. Ligger utanför while loop, annars får den värde 0 vid varje loop runda.
             int totalTemperatur = 0;
 try{
             while(true)
@@ -37,8 +39,10 @@ try{
          
             switch(menyVal)
             {
-            
-                
+                    //Case L/l
+                    //Användaren får mata in 5st temperaturer.
+                    //Temperaturer läggs in i list element. 
+                    //Plussar även på inmatad temperatur i summan. 5 temperaturer blir summan av alla temperaturer.
                 case "l":
                 case "L":
                 System.Console.WriteLine("Mata in fem(5st) temperaturer: ");
@@ -52,6 +56,10 @@ try{
                 }
                 break;
 
+                //Case S/s
+                //Kör inmatade temperaturer i en for loop för att skriva ut inmatade temperaturer.
+                //Skriver även ut medeltemperaturen på inmatade temperaturer efter loop eftersom vi redan har summan av alla temperaturer.
+
                 case "s":
                 case "S":
                 System.Console.WriteLine("Skriver ut temperaturer...");
@@ -61,6 +69,11 @@ try{
                 }
                 System.Console.WriteLine("Medeltemperatur: {0}", (totalTemperatur / 5));
                 break;
+
+
+                //Case T/t
+                //Nollställer alla element i listan samt nollställer den totala temperaturen.
+                //Detta görs via en forloop som sätter noll på lista 0-4.
 
                 case "t":
                 case "T":
