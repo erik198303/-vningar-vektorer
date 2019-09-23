@@ -14,7 +14,7 @@ namespace Väderstationen
          */
         static void Main(string[] args)
         {
-            //skapa en lista med 5 element. Alla har värde 0 från början.
+            //skapar en lista med 5 element. Alla har värde 0 från början.
             //Ligger utanför loop eftersom annars kommer dom få värde 0 efter varje loop runda.
             List<int> temperatur = new List<int>();
             temperatur.Add(0);
@@ -65,28 +65,28 @@ try{
                 System.Console.WriteLine("Skriver ut temperaturer...");
                 for (int i = 0; i < temperatur.Count; i++)
                 {
-                    System.Console.WriteLine("Inmatade temperaturer: {0}",temperatur[i]);
+                    System.Console.WriteLine("Inmatad temperatur: {0}",temperatur[i]);
                 }
                 System.Console.WriteLine("Medeltemperatur: {0}", (totalTemperatur / 5));
                 break;
 
 
                 //Case T/t
-                //Nollställer alla element i listan samt nollställer den totala temperaturen.
+                //Nollställer alla element i listan
                 //Detta görs via en forloop som sätter noll på lista 0-4.
+                //*Nollställer total temperatur efter for loop efter det är onödigt att loopa det 0-värdet 5ggr i loopen.
 
                 case "t":
                 case "T":
                 System.Console.WriteLine("*****Temperaturmätning nollställd!***** ");
                 for(int i = 0; i < temperatur.Count; i++)
                 {
-                   
 
-                    temperatur[i] = 0;
-                    totalTemperatur = 0;
-                    
+                temperatur[i] = 0;
+                       
                 }
-
+                //*Kommentar ovan.
+                totalTemperatur = 0;
                 break;
 
                 case "a":
