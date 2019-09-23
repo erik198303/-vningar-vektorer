@@ -21,30 +21,27 @@ namespace Väderstationen
             temperatur.Add(0);
             temperatur.Add(0);
             
-            int totalTemperatur = 0;
             
-
+            int totalTemperatur = 0;
+try{
             while(true)
             {
+            
             System.Console.WriteLine("[L]ägg till temperaturmätning");
             System.Console.WriteLine("[S]kriv ut alla temperaturer och medeltemperaturer");
             System.Console.WriteLine("[T]a bort temperaturmätning");
             System.Console.WriteLine("[A]vsluta");
-            
-            
-            
-
-            
+            System.Console.Write("Välj: ");
             
             string menyVal = Console.ReadLine();
-
+         
             switch(menyVal)
             {
             
                 
                 case "l":
                 case "L":
-                System.Console.WriteLine("Mata in fem(5st) temperatur: ");
+                System.Console.WriteLine("Mata in fem(5st) temperaturer: ");
                 for (int i = 0; i < temperatur.Count; i++)
                 {
                     System.Console.Write("Mata in temperatur: ");
@@ -67,9 +64,11 @@ namespace Väderstationen
 
                 case "t":
                 case "T":
-                System.Console.WriteLine("**Temperaturmätning nollställd!** ");
+                System.Console.WriteLine("*****Temperaturmätning nollställd!***** ");
                 for(int i = 0; i < temperatur.Count; i++)
                 {
+                   
+
                     temperatur[i] = 0;
                     totalTemperatur = 0;
                     
@@ -77,13 +76,22 @@ namespace Väderstationen
 
                 break;
 
-                default:
+                case "a":
+                case "A":
+                default :
                 System.Console.WriteLine("Hej då!");
                 return;
               
 
                 }
             }
+                        }
+                        catch(FormatException e){
+                            System.Console.WriteLine("***Du måste skriva ett heltal!***");
+                            System.Console.WriteLine("***Ge följande felmeddelande till IT-avdelning:***");
+                            System.Console.WriteLine(e);
+                        }
+
         }
     }
 }
